@@ -1,0 +1,62 @@
+Question 1
+For the following code, which of the following statements will not return True?
+Ans obj2['California'] == None 
+--(Reason: The value of obj2['California'] is nan which is not the same as None, so this will return False)--
+
+Question 2
+import pandas as pd
+d = {'1': 'Alice','2': 'Bob','3': 'Rita','4': 'Molly','5': 'Ryan'}
+S = pd.Series(d)
+Ans S.iloc[0:3] 
+--(Reason: S.iloc[i:j] can be used to retrieve Series rows from indices i to j-1)--
+
+Question 3
+Suppose we have a DataFrame named df. We want to change the original DataFrame df in a way that all the column names are cast to upper case.
+Which of the following expressions is incorrect to perform the same?
+Ans df.rename(mapper = lambda x: x.upper(), axis = 1)
+--(Reason: This is incorrect because the rename method will return a new DataFrame by default.
+We have to pass the result to our original DataFrame df or set the inplace parameter to 'True'.)--
+
+Question 4
+For the given DataFrame df we want to keep only the records with a toefl score greater than 105. Which of the following will not work?
+Ans df.where(df['toefl score'] > 105)
+--(Reason :This will not work as df.where() will not drop any data we don’t want, it will just set their values to nan.)--
+
+Question 5
+Which of the following can be used to create a DataFrame in Pandas?
+Ans 
+All of these work
+--(Reason :All of these can be used to create a DataFrame in Pandas)--
+
+Question 6
+Which of the following is an incorrect way to drop entries from the Pandas DataFrame named df shown below?
+Ans 
+df.drop('two')
+--(Reason :This is an incorrect way to drop values from the column named 'two' because the axis has not been specified as 1 (representing 'columns') and the default value of axis is 0.  It would yield the following error: KeyError: '['two'] not found in axis'.)--
+
+Question 7
+For the Series s1 and s2 defined below, which of the following statements will give an error?
+
+import pandas as pd
+s1 = pd.Series({1: 'Alice', 2: 'Jack', 3: 'Molly'})
+s2 = pd.Series({'Alice': 1, 'Jack': 2, 'Molly': 3})
+Ans s2.loc[1]
+--(Reason :There is no index of value 1 in s2, hence this will give an error.)--
+
+Quetion 8
+Which of the following statements is incorrect?
+1. loc and iloc are two useful and commonly used Pandas methods.
+2. If s and s1 are two pd.Series objects, we cannot use s.append(s1) to directly append s1 to the existing series s
+3. We can use s.iteritems() on a pd.Series object s to iterate on it.
+4. If s is a pd.Series object, then we can use s.loc[label] to get all data where the index is equal to label.
+Ans According to me it should be 4 but i am quite unsure about that some say it's 2 any way if some one finds the correct answer please update
+
+Question 9
+For the given DataFrame df shown above, we want to get all records with a toefl score greater than 105 but smaller than 115. Which of the following expressions is incorrect to perform the same?
+Ans (df['toefl score'] > 105) & (df['toefl score'] < 115)
+--(Reason: This will just return a boolean mask of True's and False's instead of filtering the correct rows.)--
+
+Question 10
+Which of the following is the correct way to extract all information related to the student named Alice from the DataFrame df given below:
+Ans df.T['Mathematics']
+--(Reason: This will correctly extract Alice's data as 'Mathematics' would be a column in df.T and column names can be passed as a key to retrieve the contents of the entire column, i.e. Alice's information in this case)--
