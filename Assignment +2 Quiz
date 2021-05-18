@@ -49,7 +49,8 @@ Which of the following statements is incorrect?
 2. If s and s1 are two pd.Series objects, we cannot use s.append(s1) to directly append s1 to the existing series s
 3. We can use s.iteritems() on a pd.Series object s to iterate on it.
 4. If s is a pd.Series object, then we can use s.loc[label] to get all data where the index is equal to label.
-Ans According to me it should be 4 but i am quite unsure about that some say it's 2 any way if some one finds the correct answer please update
+Ans loc and iloc are two useful and commonly Pandas methods.
+--(Reason: loc and iloc are attributes of pandas. Series object, not methods.)--
 
 Question 9
 For the given DataFrame df shown above, we want to get all records with a toefl score greater than 105 but smaller than 115. Which of the following expressions is incorrect to perform the same?
